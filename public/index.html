@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kitty: group buys from local shops</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪙</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script src="/config.js"></script>
+<script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="11" fill="none" stroke="var(--line)" stroke-width="6"/><path d="M15 4 A11 11 0 0 1 26 15" fill="none" stroke="var(--cobalt)" stroke-width="6"/><path d="M26 15 A11 11 0 0 1 15 26" fill="none" stroke="var(--coin)" stroke-width="6"/></svg>
+      Kitty
+    </div>
+    <nav class="tabs" aria-label="Sections">
+      <button data-view="shop">Shop</button>
+      <button data-view="groups">Near you<span class="count" id="near-count" hidden></span></button>
+      <button data-view="mine">My group buys<span class="count" id="todo-count" hidden></span></button>
+      <button data-view="vendor">For shops</button>
+    </nav>
+    <button class="bell" id="bell" data-act="inbox" aria-label="Notifications" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="count" id="bell-count" hidden></span></button>
+    <div class="authbar" id="authbar"></div>
+  </div>
+</header>
+<main class="wrap"><div id="view"></div></main>
+<dialog id="dlg"><div id="dlg-body"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

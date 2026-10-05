@@ -1,0 +1,29 @@
+{
+  "name": "kitty-netlify",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Kitty group buying: Vendor Connect marketplace with decentralized checkout redirection, on Netlify",
+  "scripts": {
+    "dev": "netlify dev",
+    "typecheck": "tsc --noEmit",
+    "db:migrate:local": "netlify database migrations apply",
+    "stripe:listen": "stripe listen --forward-connect-to localhost:8888/webhooks/stripe",
+    "test": "node test/integration.mjs"
+  },
+  "dependencies": {
+    "@netlify/database": "^2.0.1",
+    "@netlify/functions": "^6.0.2",
+    "jose": "^6.2.12",
+    "stripe": "^23.0.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.16",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.25.12",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
